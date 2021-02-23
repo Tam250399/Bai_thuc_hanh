@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Managament {
-    List<ManageContacts> manageContacts = new ArrayList<>();
+    String Path ="C:\\Users\\Admin\\Desktop\\Bai_thuc_hanh\\thi_lý_thuyet\\src\\PhoneBook.csv";
+    ArrayList<ManageContacts> manageContacts = ReadWriteFile.readCSV(Path);
 
     public void add (ManageContacts manageContacts1){
         manageContacts.add(manageContacts1);
+        ReadWriteFile.writeToFileCsv(manageContacts , Path);
     }
 
     public void uppdate(ManageContacts manageContacts1){
@@ -20,11 +22,13 @@ public class Managament {
                 MC.setEmail(manageContacts1.getEmail());
                 MC.setTelephone(manageContacts1.getTelephone());
                 MC.setFacebook(manageContacts1.getFacebook());
+                ReadWriteFile.writeToFileCsv(manageContacts , Path);
             }
         }
     }
     public void delete(String name){
         manageContacts.removeIf(manageContacts1 -> manageContacts1.getName().equals(name));
+        ReadWriteFile.writeToFileCsv(manageContacts , Path);
     }
 
 

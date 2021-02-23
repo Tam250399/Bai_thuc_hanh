@@ -1,10 +1,12 @@
 package view;
 
+import Behavier.Managament;
 import Entities.ManageContacts;
 
 import java.util.Scanner;
 
 public class Menus {
+    ManageContacts manageContacts = new ManageContacts();
     static Scanner sc = new Scanner(System.in);
     public static ManageContacts getInfor(){
         System.out.println("Nhập tên :");
@@ -19,4 +21,6 @@ public class Menus {
         String face = sc.nextLine();
         return new ManageContacts(name, telephone , address, email , face);
     }
+
+
 }

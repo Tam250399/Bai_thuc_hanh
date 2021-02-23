@@ -13,7 +13,7 @@ public class ReadWriteFile {
 
         private static final String COMMA_DELIMITER = ",";
         private static final String NEW_LINE_SEPARATOR = "\n";
-        private static final String FILE_HEADER = "Name,Phone Number,Address,Email,Facebook,Nickname";
+        private static final String FILE_HEADER = "Name,Phone Number,Address,Email,Facebook";
 
         public static void writeToFileCsv(ArrayList<ManageContacts> manageContactsList, String pathFile) {
             FileWriter fileWriter = null;
@@ -31,8 +31,7 @@ public class ReadWriteFile {
                     fileWriter.append(c.getEmail());
                     fileWriter.append(COMMA_DELIMITER);
                     fileWriter.append(c.getFacebook());
-                    fileWriter.append(COMMA_DELIMITER);
-
+                    fileWriter.append(NEW_LINE_SEPARATOR);
                 }
                 System.out.println("Done!!!");
             } catch (Exception e) {
@@ -60,7 +59,7 @@ public class ReadWriteFile {
                         System.out.println("Contacts: ");
                     } else System.out.println("Name: " + cols[0] + ", phone number: " + cols[1] +
                             ", address: " + cols[2] + ", email: " + cols[3] + ", facebook: " +
-                            cols[4] + ", nickname: " + cols[5]);
+                            cols[4]);
                 }
             } catch (IOException ie) {
                 ie.printStackTrace();

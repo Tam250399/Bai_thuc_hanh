@@ -58,15 +58,18 @@ public class ManageContacts {
         this.facebook = facebook;
     }
 
-
     @Override
     public String toString() {
-        return "ManageContacts{" +
-                "name='" + name + '\'' +
-                ", telephone=" + telephone +
-                ", address='" + address + '\'' +
-                ", Email='" + Email + '\'' +
-                ", facebook='" + facebook + '\'' +
-                '}';
+        return
+                "\n Name = " + name + '\'' +
+                " \n Telephone =" + telephone +
+                "\n address= " + address + '\'' +
+                "\n Email =" + Email + '\'' +
+                "\n facebook =" + facebook + '\'';
+
     }
-}
+};
+
+
+
+
